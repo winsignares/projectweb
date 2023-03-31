@@ -5,7 +5,7 @@ class Taks(bd.Model):
     id = bd.Column(bd.Integer, primary_key = True)
     nametak = bd.Column(bd.String(50))
     idUser_fk = bd.Column(bd.Integer, bd.ForeignKey('tblusers.id'))
-    idCategory_fk = bd.Column(bd.Integer,bd.ForeingKey('tblcategory.id'))
+    idCategory_fk = bd.Column(bd.Integer,bd.ForeignKey('tblcategory.id'))
     def __init__(self, nametak, idUser_fk):
         self.nametak = nametak
         self.idUser_fk = idUser_fk
