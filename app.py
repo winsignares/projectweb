@@ -34,5 +34,24 @@ def rutanueva():
     bd.session.commit()     
     return "guardado"
 
+@app.route("/eliminar", methods=['POST'])
+def eliminaruser():    
+    id = request.json['id'] 
+    usuario = Users.query.get(id)    
+    bd.session.delete(usuario)
+    bd.session.commit()     
+    return jsonify(user_schema.dump(usuario))
+
+@app.route("/actualizar", methods=['POST'])
+def actualizaruser():    
+    id = request.json['id'] 
+    fullname = request.json['fullname'] 
+    email = request.json['email']
+    usuario = Users.query.get(id)  
+    usuario.fullname = fullname
+    usuario.email = email
+    bd.session.commit()     
+    return "actualización exitosa"
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
