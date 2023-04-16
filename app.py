@@ -79,9 +79,17 @@ def dostablas():
 def trestabla():
     results = bd.session.query(Users, Taks, Category). \
     select_from(Users).join(Taks).join(Category).all()
+    dato={}   
+    i=0
     for users, taks, category in results:
+        i+=1
+        dato[i] = {
+        'Nombre':users.fullname,
+		'tarea':taks.nametak,
+		'categoria':category.namecategory,                     
+        }       
         print(users.fullname, taks.nametak, category.namecategory)
-    return "Dato"
+    return jsonify(dato)
 
 @app.route('/trestablaconfiltro', methods=['GET'])
 def trestablaconfiltro():
