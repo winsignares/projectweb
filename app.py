@@ -19,7 +19,7 @@ Categorys_schema = CategorySchema(many=True)
 Taks_schema = TaksSchema()
 Taks_schemas = TaksSchema(many=True)
 
-@app.route("/")
+@app.route("/", methods=['GET'])
 def index():
     resultusers = Users.query.all()
     resultado = users_schema.dump(resultusers)

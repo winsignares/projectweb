@@ -15,4 +15,4 @@ with app.app_context():
 
 class TaksSchema(ma.Schema):
     class Meta:
-        fields =('id', 'nametak', 'idUser_fk')
+        fields =('id', 'nametak', 'idUser_fk', 'idCategory_fk')
