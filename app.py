@@ -1,5 +1,5 @@
 #importo las librerias de flask
-from flask import Flask, request, jsonify, json
+from flask import Flask, request, jsonify, json, render_template
 #importo las dependencias de trabajo
 from config.db import app, bd
 
@@ -19,11 +19,10 @@ Categorys_schema = CategorySchema(many=True)
 Taks_schema = TaksSchema()
 Taks_schemas = TaksSchema(many=True)
 
+
 @app.route("/", methods=['GET'])
 def index():
-    resultusers = Users.query.all()
-    resultado = users_schema.dump(resultusers)
-    return jsonify(resultado)
+    return render_template('layout.html')
 
 @app.route("/saveuser", methods=['POST'])
 def rutanueva():
@@ -104,3 +103,7 @@ def trestablaconfiltro():
    
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
+
+''' resultusers = Users.query.all()
+    resultado = users_schema.dump(resultusers)
+    return jsonify(resultado)'''
