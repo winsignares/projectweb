@@ -24,6 +24,10 @@ Taks_schemas = TaksSchema(many=True)
 def index():
     return render_template('taks.html')
 
+@app.route("/usuario", methods=['GET'])
+def usuario():
+    return render_template('users.html')
+
 @app.route("/saveuser", methods=['POST'])
 def rutanueva():
     fullname = request.json['fullname'] 
