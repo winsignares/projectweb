@@ -22,11 +22,13 @@ Taks_schemas = TaksSchema(many=True)
 
 @app.route("/", methods=['GET'])
 def index():
-    return render_template('taks.html')
+    nombre= "Agregar Tarea"
+    return render_template('taks.html', name = nombre)
 
 @app.route("/usuario", methods=['GET'])
 def usuario():
-    return render_template('users.html')
+    nombre= "Agregar Usuario"
+    return render_template('users.html',name = nombre)
 
 @app.route("/saveuser", methods=['POST'])
 def rutanueva():
