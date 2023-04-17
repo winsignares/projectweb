@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="col-md-6 offset-md-3">
+    <h2 style="text-align: center ">Registro usuario</h2>
+    <form class="form-group"> 
+      <div class="form-group">
+     
+        <label>Nombre Completo</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="Ingrese su nombre  Completo  ""  
+          name="nombre"
+        />
+      </div>
+      <div class="form-group">
+        <br>
+        <label for="exampleFormControlInput1" class="form-label">Ingrese su email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput2"
+          placeholder=" Ingrese su email"
+          name="email"
+          />
+      </div>
+      <div class="form-group">
+        <br>
+        <label for="exampleFormControlInput1" class="form-label">Tarea</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput3"
+          placeholder=" ingrese  tarea"
+
+          name="Tarea"
+        />
+        <select class="form-select" aria-label="Categoria">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+      </div>
+    
+      <br />
+      <div>
+        <button type="button" class="btn btn-primary"  style="margin-right: 50px;">Agregar</button>
+    
+       </div>
+    </form>
+    
+  </div>
+{% endblock %}

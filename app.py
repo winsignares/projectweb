@@ -22,7 +22,7 @@ Taks_schemas = TaksSchema(many=True)
 
 @app.route("/", methods=['GET'])
 def index():
-    return render_template('layout.html')
+    return render_template('taks.html')
 
 @app.route("/saveuser", methods=['POST'])
 def rutanueva():
