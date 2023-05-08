@@ -39,13 +39,6 @@ def rutanueva():
     bd.session.commit()     
     return "guardado"
 
-@app.route("/savecategory", methods=['POST'])
-def rutanueva():
-    namecategory = request.json ['namecategory']
-    newcategory = Category(namecategory)
-    bd.session.add(newcategory)
-    bd.session.commit()     
-    return "guardado"
 
 @app.route("/eliminar", methods=['POST'])
 def eliminaruser():    
