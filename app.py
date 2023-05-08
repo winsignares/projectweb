@@ -30,11 +30,6 @@ def usuario():
     nombre= "Agregar Usuario"
     return render_template('users.html',name = nombre)
 
-@app.route("/Category", methods=['GET'])
-def categoria():
-    nombre= "Agregar Category"
-    return render_template('category.html',name = nombre)
-
 @app.route("/saveuser", methods=['POST'])
 def rutanueva():
     fullname = request.json['fullname'] 
@@ -42,7 +37,15 @@ def rutanueva():
     newuser = Users(fullname, email)
     bd.session.add(newuser)
     bd.session.commit()     
-    return 'guardado'
+    return "guardado"
+
+@app.route("/savecategory", methods=['POST'])
+def rutanueva():
+    namecategory = request.json ['namecategory']
+    newcategory = Category(id, namecategory)
+    bd.session.add(newcategory)
+    bd.session.commit()     
+    return "guardado"
 
 @app.route("/eliminar", methods=['POST'])
 def eliminaruser():    
