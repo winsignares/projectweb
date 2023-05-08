@@ -42,7 +42,7 @@ def rutanueva():
 @app.route("/savecategory", methods=['POST'])
 def rutanueva():
     namecategory = request.json ['namecategory']
-    newcategory = Category(id, namecategory)
+    newcategory = Category(namecategory)
     bd.session.add(newcategory)
     bd.session.commit()     
     return "guardado"
