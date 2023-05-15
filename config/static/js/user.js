@@ -17,6 +17,17 @@ function saveuser() {
 
 function MostrarUsuario() {
   //alertify.success('Hola Mundo');
+  Swal.fire({
+    title: 'Custom animation with Animate.css',
+    showClass: {
+      popup: 'animate__animated animate__fadeInDown'
+    },
+    hideClass: {
+      popup: 'animate__animated animate__fadeOutUp'
+    }
+  })
+
+
   const listausuario = document.getElementById('listausuario');
   let endpoint = "/dostablas";
 
