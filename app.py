@@ -30,6 +30,12 @@ def usuario():
     nombre= "Agregar Usuario"
     return render_template('users.html',name = nombre)
 
+@app.route("/Category", methods=['GET'])
+def categoria():
+    nombre= "Estamos en categoria"
+    return render_template('category.html',name = nombre)
+
+
 @app.route("/saveuser", methods=['POST'])
 def rutanueva():
     fullname = request.json['fullname'] 

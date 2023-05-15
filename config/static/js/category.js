@@ -1,4 +1,4 @@
-function savecategoria() {
+function savecategory() {
     let endpoint = '/savecategory'
     const textname = document.getElementById('imput category');
 
