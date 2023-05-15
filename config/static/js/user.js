@@ -1,7 +1,7 @@
 function saveuser() {
-    let endpoint = '/pruebaaxios'
+    let endpoint = '/saveuser'
     const textUser = document.getElementById('nombre');
-    const textemail = document.getElementById('email');
+    const textemail = document.getElementById('useremail');
     
     axios.post(endpoint, {
         'fullname' : textUser.value,
@@ -38,6 +38,38 @@ function MostrarUsuario() {
         }       
         
         listausuario.innerHTML = Lusuario;
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .finally(function () {
+        // always executed
+      });  
+}
+
+function MostrarUser() {
+  //alertify.success('Agregado correctamente');
+  const listausuario2 = document.getElementById('listausuario2');
+  let endpoint = "/unatabla";
+
+      axios.get(endpoint)
+      .then(function (response) {
+        let data = response.data;
+        let Lusuario2 ="";
+        let longitud = (Object.keys(data).length) +1 ;
+        
+        for (let index = 1; index < longitud; index++) {          
+          
+          Lusuario2 += `<tr>
+                        <th scope="row">${index}</th>
+                        <td>${data[index].Nombre}</td>
+                        <td>${data[index].email}</td>
+                      </tr>`;
+
+        }       
+        
+        listausuario2.innerHTML = Lusuario2;
 
       })
       .catch(function (error) {
