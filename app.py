@@ -39,6 +39,7 @@ def rutanueva():
     bd.session.commit()     
     return "guardado"
 
+
 @app.route("/eliminar", methods=['POST'])
 def eliminaruser():    
     id = request.json['id'] 
