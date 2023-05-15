@@ -76,7 +76,7 @@ def dostablas():
         dato[i] = {
         'Nombre':users.fullname,
 		'email':users.email,
-		'Nombre Tarea':taks.nametak,                     
+		'NombreTarea':taks.nametak,                     
         }
         print(users.fullname, taks.nametak)
    
