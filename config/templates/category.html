@@ -8,15 +8,32 @@
      
         <label>Escoger categoria</label><br>
         <label for="categoria">Selecciona una categoría:</label>
-      <select class="form-control" id="imput category">
+        <select class="form-control" id="imput category">
         <option>Opcion 1</option>
         <option>Opcion 2</option>
         <option>Opcion 3</option>
         <option>Opcion 4</option>
         <option>Opcion 5</option>
-      </select><br>
-      <a class="btn btn-primary"  style="margin-right: 50px;"onclick="savecategory()">Seleccionar categoria </a>
+        </select><br>
+        <a class="btn btn-primary"  style="margin-right: 50px;"onclick="savecategory()">Seleccionar categoria </a>
+        <a  class="btn btn-primary" onclick="MostrarCategoria()">Mostrar categoria</a>
       </div>
     </form>
-      
+</div>
+<br />
+<div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+      </tr>
+    </thead>
+    <tbody id="listacategoria">      
+
+    </tbody>
+  </table>
+</div>
+
 {% endblock %}
