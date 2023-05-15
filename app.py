@@ -85,7 +85,36 @@ def dostablas():
 # ⛔️ TypeError: Object of type bytes is not JSON serializable
    
     return jsonify(dato)
-    
+
+@app.route('/unatabla', methods=['GET'])
+def unatabla():
+    results = bd.session.query(Users).all() 
+    dato={}   
+    i=0
+    for users in results:
+        i+=1	       
+        dato[i] = {
+        'Nombre':users.fullname,
+		'email':users.email                   
+        }
+        print(users.fullname, users.email)
+        
+    return jsonify(dato)
+
+@app.route('/todascategorias', methods=['GET'])
+def todascategorias():
+    results = bd.session.query(Category).all()
+    dato={}
+    i=0
+    for category in results:
+        i+=1
+        dato[i]={
+            'ID':category.id,
+            'Nombre de categoria':category.namecategory
+        }
+        print(category.id, category.namecategory)
+        
+    return jsonify(dato)
 
 @app.route('/trestablas',methods=['GET'])
 def trestabla():
